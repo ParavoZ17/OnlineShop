@@ -6,7 +6,7 @@ import styles from './Footer.module.css'
 function Footer (){
     return (
         <footer >
-            <h2>Contact</h2>
+            <h2 className={styles.footer_title}>Contact</h2>
             <div className={styles.container}>
             <div className={styles.contactContainer}>
                 <p className={styles.title}>Phone</p>
@@ -14,8 +14,8 @@ function Footer (){
             </div>
             <div className={styles.contactContainer}>
                 <p className={styles.title}>Socials</p>
-                <img src={whatsapp} alt="whatsapp" />
-                <img src={instagram} alt="instagram" />
+                <div className={styles.socialIcons}><img src={whatsapp} alt="whatsapp" />
+                <img src={instagram} alt="instagram" /></div>
             </div>
             <div className={styles.contactContainer}>
                 <p className={styles.title}>Address</p>

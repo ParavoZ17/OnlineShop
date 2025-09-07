@@ -1,10 +1,17 @@
 footer{
     padding-bottom: 80px;
 }
+.footer_title{
+    font-size: 64px;
+    line-height: 110%;
+    margin-bottom: 40px;
+}
 .container{
      display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 32px;
+     grid-template-columns: minmax(780px, 2fr) minmax(548px, 1fr);
+  gap: 32px;
+  width: 100%;
+    
     
     font-size: 20px;
     font-weight: medium;
@@ -14,14 +21,23 @@ footer{
 
 .contactContainer{
     padding: 32px;
+    border-radius: 12px;
     background-color: #F1F3F4;
 }
 .title {
     color: #8B8B8B;
+    margin-bottom: 16px;
 }
 
 .info {
     font-size: 40px;
     font-weight: 600;
     line-height: 110%;
+}
+
+.socialIcons{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
 }
