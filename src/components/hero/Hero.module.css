@@ -5,6 +5,7 @@
   background-position: center; 
   background-repeat: no-repeat;
   padding: 80px 40px 210px 40px; 
+  margin-bottom: 80px;
 }
 h1 {
   max-width: 1000px;
@@ -14,8 +15,10 @@ h1 {
 }
 
 .hero > button {
+  font-size: 20px;
 padding: 16px 56px;
 background-color: #0D50FF;
 color: #ffff;
+border: none;
 border-radius: 6px;
 }

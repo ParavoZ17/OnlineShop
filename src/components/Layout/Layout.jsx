@@ -7,11 +7,11 @@
     export default function Layout() {
     return (
     <div className={styles.container}>
-    <Header/>
+    {/* <Header/> */}
     <main >
     <Outlet /> 
     </main>
-    <Footer/>
+    {/* <Footer/> */}
     </div>
     );
     }
