@@ -1,17 +1,16 @@
 import Hero from "../../components/hero/Hero";
 import CategoryList from "../../components/CategoryList/CategoryList.jsx";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
-
-import { useNavigate } from "react-router-dom";
 import styles from "./Main.module.css";
 
 import ProductsList from "../../components/productsList/ProductsList.jsx";
-import SectionHeader from "../../components/SectionHeader/SectionHeader.jsx";
+
 import GetDiscount from "../../components/getDiscount/GetDiscount.jsx";
 
 function Main() {
-  const navigate = useNavigate();
+
 
   const {
     data: categoriesData,
@@ -29,7 +28,6 @@ function Main() {
     <>
       <Hero />
       <div className={styles.container}>
-        
         {categoriesStatus === "loading" && <p>Loading...</p>}
         {categoriesStatus === "failed" && <p>Error: {categoriesError}</p>}
         {categoriesStatus === "succeeded" && (
@@ -44,6 +42,17 @@ function Main() {
           <ProductsList products={productsData} mode="main" />
         )}
       </div>
+         <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }

@@ -1,5 +1,5 @@
 .basketContainer {
-  padding: 0 40px;
+  padding: 40px 40px 80px 40px;
 }
 .titleBasket {
   margin-bottom: 40px;
@@ -21,87 +21,130 @@
     border-radius: 6px;
   }
 }
-.basketSection{
-  display: flex;
+.basketSection {
+   display: flex;
+  justify-content: space-between; /* розділяє ліво-право */
+  align-items: flex-start; /* щоб верх був рівний */
+  gap: 32px;
 }
 
 .productImg {
   width: 200px;
-  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
   border-right: solid 1px rgb(184, 181, 181);
 }
 
 .productsList {
+  flex: 1; /* займає увесь простір зліва */
   display: flex;
-  flex: 1;
   flex-direction: column;
+  gap: 16px;
 }
 .product {
   display: flex;
-  
   border-radius: 12px;
-  overflow:hidden;
+  border: solid 1px #dddddd;
+
+  overflow: hidden;
 }
 
-.productInfo{
+.productInfo {
   flex: 1;
   padding: 32px;
-
 }
 
-.productTitle{
+.productTitle {
   display: flex;
   justify-content: space-between;
   align-items: start;
   font-size: 20px;
   line-height: 130%;
   margin-bottom: 32px;
-  
-}
-.orderSending{
-flex: 0 1 548px
 }
 
-.countProductSection{
+
+.countProductSection {
   display: flex;
+ 
   gap: 32px;
 }
 
-.countProduct{
-border: solid 1px #DDDDDD;
-border-radius: 6px;
-  button{
+.countProduct {
+  border: solid 1px #dddddd;
+  border-radius: 6px;
+  button {
     width: 58px;
     height: 58px;
-    color: #8B8B8B;
+    color: #8b8b8b;
     border-radius: 6px;
+    font-size: 20px;
     border: none;
   }
-  
-}
-.left{
-  border-right: solid #DDDDDD 1px;
-
+  .left {
+    border-right: solid #dddddd 1px;
+  }
+  .right {
+    border-left: 1px solid #dddddd;
+  }
 }
 
 .quantity {
+  display: inline-block;
   font-size: 20px;
-    width: 116px;
-  }
+  width: 116px;
+  text-align: center;
+}
 
-.divPrice{
+.divPrice {
   display: flex;
   align-items: center;
-  gap: 16px ;
+  gap: 16px;
 }
-.price{
+.price {
   font-size: 40px;
+  font-weight: 500;
 }
 
-.discont_price{
-font-size: 20px;
-color: #8B8B8B;
-text-decoration: line-through;
+.discont_price {
+  font-size: 20px;
+  color: #8b8b8b ;
+  text-decoration: line-through;
 }
+
+.orderSending {
+  flex: 0 0 548px; /* фіксована ширина */
+  max-height: 582px;
+  background-color: #DDDDDD;
+  border-radius: 12px;
+}
+.orderSendingTitle{
+    display: flex;
+    flex-direction: column;
+    padding: 32px 32px 0 32px;
+    h3{
+      font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    }
+
+    p{
+      font-size: 40px;
+      line-height: 130%;
+      color: #8b8b8b;
+    }
+    .summary{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    span {
+      font-size: 64px;
+      line-height: 110%;
+      font-weight: 700;
+    }
+  
+  }
+
+ 

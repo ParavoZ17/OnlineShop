@@ -11,25 +11,29 @@ export default function CategoryList({ categories, limit }) {
 
   return (
     <>
-    {limit ? <SectionHeader
+      {limit ? (
+        <SectionHeader
           title="Categories"
           buttonText="All Categories"
           onClick={() => navigate("/categories")}
-        />:''}
-    <ul className={styles.list}>
-      {displayedCategories.map((category) => (
-        <li key={category.id}>
-          <Link to={`/categories/${category.id}`}>
-            <img
-              src={`http://localhost:3333${category.image}`}
-              alt={category.title}
-              className={styles.categoryImg}
-            />
-            <p>{category.title}</p>
-          </Link>
-        </li>
-      ))}
-    </ul>
+        />
+      ) : (
+        ""
+      )}
+      <ul className={styles.list}>
+        {displayedCategories.map((category) => (
+          <li key={category.id}>
+            <Link to={`/categories/${category.id}`}>
+              <img
+                src={`http://localhost:3333${category.image}`}
+                alt={category.title}
+                className={styles.categoryImg}
+              />
+              <p>{category.title}</p>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

@@ -1,31 +1,39 @@
-import styles from "./form.module.css";
+import styles from "./orderForm.module.css";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useSelector } from "react-redux";
 
-export default function Form() {
+export default function OrderForm() {
+  const cartItems = useSelector((state) => state.basket.items);
+
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isValid },
     reset,
+    formState: { errors, isSubmitting, isValid },
   } = useForm({
-    mode: "onBlur", 
+    mode: "onBlur",
     reValidateMode: "onBlur",
   });
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://localhost:3333/sale/send", {
+      const orderData = {
+        ...data,
+        items: cartItems,
+      };
+
+      const response = await fetch("http://localhost:3333/order/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(orderData),
       });
 
       if (!response.ok) throw new Error("Error while sending");
 
-      toast.success("✅ Data has been sent successfully!");
-      reset();
+     toast.success("✅ Order has been sent successfully!");
+  reset();
     } catch (error) {
       toast.error("❌ An error occurred while sending");
     }
@@ -43,7 +51,6 @@ export default function Form() {
               maxLength: { value: 30, message: "Maximum 30 characters" },
             })}
           />
-          <p className={styles.error}>{errors.name?.message || ""}</p>
         </div>
 
         <div className={styles.inputWrapper}>
@@ -57,7 +64,6 @@ export default function Form() {
               },
             })}
           />
-          <p className={styles.error}>{errors.phoneNumber?.message || ""}</p>
         </div>
 
         <div className={styles.inputWrapper}>
@@ -71,18 +77,23 @@ export default function Form() {
               },
             })}
           />
-          <p className={styles.error}>{errors.email?.message || ""}</p>
+           <div className={styles.errorContainer}>
+          {Object.keys(errors).length > 0 && (
+            <div className={styles.formErrors}>
+              {Object.values(errors)[0].message}
+            </div>
+          )}
+        </div>
         </div>
 
         <input
           type="submit"
-          value={isSubmitting ? "Sending..." : "Get a discount"}
+          value={isSubmitting ? "Sending..." : "Order"}
           disabled={!isValid || isSubmitting}
           className={styles.submitBtn}
         />
       </form>
-
-   
+      <ToastContainer />
     </>
   );
 }

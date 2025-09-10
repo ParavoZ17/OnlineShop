@@ -11,12 +11,11 @@
     font-size: 20px;
     line-height: 130%;
     border: solid 1px rgb(184, 181, 181);
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
   }
 }
-
 
 .productImg {
   width: 100%;

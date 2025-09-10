@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +9,7 @@ body {
   height: 100%;
   font-family: sans-serif;
   color: #282828;
-  background-color: #f8f5f5;
+  background-color: #fff;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   margin: 0 auto;

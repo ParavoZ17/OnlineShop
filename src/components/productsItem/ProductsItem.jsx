@@ -14,11 +14,10 @@ export default function ProductItem({ title, price }) {
   return (
     <div>
       <div>
-      <h2>{title}</h2>
-      <button>X</button>
+        <h2>{title}</h2>
+        <button>X</button>
       </div>
 
-      
       <div>
         <button onClick={handleDecrease}>-</button>
         <span>{count}</span>
@@ -28,4 +27,3 @@ export default function ProductItem({ title, price }) {
     </div>
   );
 }
-

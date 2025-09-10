@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/icons/logo.svg";
-import basket from "../../assets/icons/basket.svg";
 import styles from "./Header.module.css";
+import CartIcon from "../cartIcon/CartIcon";
 
 function Header() {
   const getNavClass = ({ isActive }) =>
@@ -26,7 +26,7 @@ function Header() {
         </NavLink>
       </nav>
       <Link to="/basket">
-        <img src={basket} alt="Basket" width="48" height="48" />
+       <CartIcon/>
       </Link>
     </header>
   );
