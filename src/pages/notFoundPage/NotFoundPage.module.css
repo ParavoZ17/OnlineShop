@@ -1,25 +1,25 @@
 .container {
-    display: flex;
-    flex-direction: column;
-     padding: 80px 375px;
-    margin: 0 auto; 
-    text-align: center;
-    h2{
-        margin-bottom: 16px;
-    }
+  display: flex;
+  flex-direction: column;
+  padding: 80px 375px;
+  margin: 0 auto;
+  text-align: center;
+  h2 {
+    margin-bottom: 16px;
+  }
 }
 
-.paragraph{
-    font-size: 20px;
-    line-height: 130%;
-    color: #8B8B8B;
-    margin-bottom: 32px;
+.paragraph {
+  font-size: 20px;
+  line-height: 130%;
+  color: #8b8b8b;
+  margin-bottom: 32px;
 }
 
-.button{
-    background-color: #0D50FF;
-    color: #fff ;
-    padding: 16px 56px;
-    border: none;
-    border-radius: 6px;
+.button {
+  background-color: #0d50ff;
+  color: #fff;
+  padding: 16px 56px;
+  border: none;
+  border-radius: 6px;
 }

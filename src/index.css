@@ -4,13 +4,16 @@
   box-sizing: border-box;
 }
 
- body {
+body {
+  max-width: 1440px;
   height: 100%;
   font-family: sans-serif;
   color: #282828;
-  background-color: #fff;
-   font-family: "Montserrat", sans-serif;
+  background-color: #f8f5f5;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
+  margin: 0 auto;
+  border: 1px solid #282828; /* ось так */
 }
 
 a {
@@ -18,13 +21,14 @@ a {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
-h2{
-   font-size: 64px;
-    line-height: 110%;
+h2 {
+  font-size: 64px;
+  line-height: 110%;
 }
 button {
   background-color: inherit;

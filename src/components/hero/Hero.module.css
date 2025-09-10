@@ -1,10 +1,10 @@
 .hero {
   max-width: 1440px;
-  background-image: url('../../assets/images/hero.jpg'); 
-  background-size: cover;   
-  background-position: center; 
+  background-image: url("../../assets/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  padding: 80px 40px 210px 40px; 
+  padding: 80px 40px 210px 40px;
   margin-bottom: 80px;
 }
 h1 {
@@ -16,9 +16,9 @@ h1 {
 
 .hero > button {
   font-size: 20px;
-padding: 16px 56px;
-background-color: #0D50FF;
-color: #ffff;
-border: none;
-border-radius: 6px;
+  padding: 16px 56px;
+  background-color: #0d50ff;
+  color: #ffff;
+  border: none;
+  border-radius: 6px;
 }
