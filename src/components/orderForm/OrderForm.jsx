@@ -32,8 +32,8 @@ export default function OrderForm() {
 
       if (!response.ok) throw new Error("Error while sending");
 
-     toast.success("✅ Order has been sent successfully!");
-  reset();
+      toast.success("✅ Order has been sent successfully!");
+      reset();
     } catch (error) {
       toast.error("❌ An error occurred while sending");
     }
@@ -77,13 +77,13 @@ export default function OrderForm() {
               },
             })}
           />
-           <div className={styles.errorContainer}>
-          {Object.keys(errors).length > 0 && (
-            <div className={styles.formErrors}>
-              {Object.values(errors)[0].message}
-            </div>
-          )}
-        </div>
+          <div className={styles.errorContainer}>
+            {Object.keys(errors).length > 0 && (
+              <div className={styles.formErrors}>
+                {Object.values(errors)[0].message}
+              </div>
+            )}
+          </div>
         </div>
 
         <input

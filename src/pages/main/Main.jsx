@@ -10,8 +10,6 @@ import ProductsList from "../../components/productsList/ProductsList.jsx";
 import GetDiscount from "../../components/getDiscount/GetDiscount.jsx";
 
 function Main() {
-
-
   const {
     data: categoriesData,
     status: categoriesStatus,
@@ -42,7 +40,7 @@ function Main() {
           <ProductsList products={productsData} mode="main" />
         )}
       </div>
-         <ToastContainer
+      <ToastContainer
         position="top-right"
         autoClose={4000}
         hideProgressBar={false}

@@ -45,9 +45,8 @@ input::placeholder {
   cursor: not-allowed;
 }
 
-
 .errorContainer {
-  height: 20px; 
+  height: 20px;
   overflow: hidden;
   margin-top: 5px;
 }
@@ -58,4 +57,3 @@ input::placeholder {
   text-align: center;
   line-height: 20px;
 }
-

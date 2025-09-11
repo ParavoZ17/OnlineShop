@@ -26,7 +26,7 @@ function Header() {
         </NavLink>
       </nav>
       <Link to="/basket">
-       <CartIcon/>
+        <CartIcon />
       </Link>
     </header>
   );

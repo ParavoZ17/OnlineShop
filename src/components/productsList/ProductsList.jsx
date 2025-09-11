@@ -21,7 +21,6 @@ export default function ProductsList({ products, mode }) {
   const findetCategory = categoriesData.find((p) => p.id === Number(id));
   let filtered = products;
 
- 
   if (mode === "main") {
     filtered = products
       .filter((product) => product.discont_price)
@@ -37,7 +36,6 @@ export default function ProductsList({ products, mode }) {
     filtered = products.filter((p) => p.categoryId === Number(id));
   }
 
-
   filtered = filtered.filter((p) => {
     if (priceFrom && p.price < +priceFrom) return false;
     if (priceTo && p.price > +priceTo) return false;
@@ -45,18 +43,17 @@ export default function ProductsList({ products, mode }) {
     return true;
   });
 
-
   filtered = [...filtered].sort((a, b) => {
     const priceA = a.discont_price ?? a.price;
     const priceB = b.discont_price ?? b.price;
 
     if (sortBy === "priceAsc") return priceA - priceB;
     if (sortBy === "priceDesc") return priceB - priceA;
-    if (sortBy === "newest") return new Date(b.createdAt) - new Date(a.createdAt);
+    if (sortBy === "newest")
+      return new Date(b.createdAt) - new Date(a.createdAt);
     return 0;
   });
 
- 
   let title;
   if (mode === "main") {
     title = (
@@ -84,7 +81,6 @@ export default function ProductsList({ products, mode }) {
       )}
       {typeof title !== "string" && title}
 
-   
       {mode !== "main" && (
         <div className={styles.filters}>
           <label>
@@ -103,7 +99,6 @@ export default function ProductsList({ products, mode }) {
             />
           </label>
 
-    
           {mode !== "sale" && (
             <label>
               Discounted items
@@ -134,7 +129,7 @@ export default function ProductsList({ products, mode }) {
           return (
             <li key={product.id}>
               <Link
-                to={`/product/${product.id}`}
+                to={`/products/${product.id}`}
                 className={styles.productLink}
               >
                 {product.discont_price && (
@@ -167,8 +162,12 @@ export default function ProductsList({ products, mode }) {
                   <div>
                     {product.discont_price ? (
                       <>
-                        <span className={styles.price}>${product.discont_price}</span>
-                        <span className={styles.discont_price}>${product.price}</span>
+                        <span className={styles.price}>
+                          ${product.discont_price}
+                        </span>
+                        <span className={styles.discont_price}>
+                          ${product.price}
+                        </span>
                       </>
                     ) : (
                       <span className={styles.price}>${product.price}</span>

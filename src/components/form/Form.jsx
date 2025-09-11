@@ -10,7 +10,7 @@ export default function Form() {
     formState: { errors, isSubmitting, isValid },
     reset,
   } = useForm({
-    mode: "onBlur", 
+    mode: "onBlur",
     reValidateMode: "onBlur",
   });
 
@@ -81,8 +81,6 @@ export default function Form() {
           className={styles.submitBtn}
         />
       </form>
-
-   
     </>
   );
 }
