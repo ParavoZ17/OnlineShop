@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slice/bastetSlice";
 import DescriptionModal from "../descriptionModal/DescriptionModal";
+import {BASE_URL} from '../../../constants'
 
 export default function ProductDetail({ product }) {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ export default function ProductDetail({ product }) {
 
   return (
     <div className={styles.product_container}>
-      <img src={`http://localhost:3333${product.image}`} alt={product.title} />
+      <img src={`${BASE_URL}${product.image}`} alt={product.title} />
       <div className={styles.details}>
         <h3 className={styles.title}>{product.title}</h3>
         <div>

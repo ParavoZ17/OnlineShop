@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./CategoryList.module.css";
 import SectionHeader from "../sectionHeader/SectionHeader";
 import { useNavigate } from "react-router-dom";
+import {BASE_URL} from '../../../constants'
 
 export default function CategoryList({ categories, limit }) {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export default function CategoryList({ categories, limit }) {
           <li key={category.id}>
             <Link to={`/categories/${category.id}`}>
               <img
-                src={`http://localhost:3333${category.image}`}
+                src={`${BASE_URL}${category.image}`}
                 alt={category.title}
                 className={styles.categoryImg}
               />

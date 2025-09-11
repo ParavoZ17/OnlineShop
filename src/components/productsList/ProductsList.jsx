@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import SectionHeader from "../sectionHeader/SectionHeader";
 import { useState } from "react";
 import ProductPrice from "../productPrice/ProductPrice";
+import {BASE_URL} from '../../../constants'
 
 export default function ProductsList({ products, mode }) {
   const navigate = useNavigate();
@@ -145,7 +146,7 @@ export default function ProductsList({ products, mode }) {
                   </div>
                 )}
                 <img
-                  src={`http://localhost:3333${product.image}`}
+                  src={`${BASE_URL}${product.image}`}
                   alt={product.title}
                   className={styles.productImg}
                 />

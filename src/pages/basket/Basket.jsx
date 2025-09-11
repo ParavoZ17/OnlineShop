@@ -3,6 +3,8 @@ import styles from "./basket.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import OrderForm from "../../components/orderForm/OrderForm";
 import SectionHeader from "../../components/sectionHeader/SectionHeader";
+import {BASE_URL} from '../../../constants'
+import summary from "../../utils/summary";
 
 import {
   decrementQuantity,
@@ -14,19 +16,7 @@ function Basket() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.basket.items);
   const navigate = useNavigate();
-
-  const summary = cartItems.reduce(
-    (acc, item) => {
-      const priceToUse = item.discont_price ? item.discont_price : item.price;
-
-      acc.totalQuantity += item.quantity;
-      acc.totalPrice += priceToUse * item.quantity;
-
-      return acc;
-    },
-    { totalQuantity: 0, totalPrice: 0 },
-  );
-
+const sum = summary(cartItems);
   return (
     <div className={styles.basketContainer}>
       <SectionHeader
@@ -54,7 +44,7 @@ function Basket() {
             {cartItems.map((item) => (
               <li key={item.id} className={styles.product}>
                 <img
-                  src={`http://localhost:3333${item.image}`}
+                  src={`${BASE_URL}${item.image}`}
                   alt={item.title}
                   className={styles.productImg}
                 />
@@ -118,13 +108,13 @@ function Basket() {
             <div className={styles.orderSendingTitle}>
               <h3>Order details</h3>
               <p className={styles.quantityItem}>
-                {summary.totalQuantity > 1
-                  ? `${summary.totalQuantity} items `
-                  : `${summary.totalQuantity} item `}
+                {sum.totalQuantity > 1
+                  ? `${sum.totalQuantity} items `
+                  : `${sum.totalQuantity} item `}
               </p>
               <div className={styles.summary}>
                 <p>Total</p>
-                <span>${summary.totalPrice},00</span>
+                <span>${sum.totalPrice},00</span>
               </div>
             </div>
             <OrderForm />

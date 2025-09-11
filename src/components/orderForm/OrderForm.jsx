@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
+import {VALIDATION, BASE_URL} from '../../../constants'
 
 export default function OrderForm() {
   const cartItems = useSelector((state) => state.basket.items);
@@ -24,7 +25,7 @@ export default function OrderForm() {
         items: cartItems,
       };
 
-      const response = await fetch("http://localhost:3333/order/send", {
+      const response = await fetch(`${BASE_URL}/order/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),
@@ -45,37 +46,21 @@ export default function OrderForm() {
         <div className={styles.inputWrapper}>
           <input
             placeholder="Name"
-            {...register("name", {
-              required: "Name is required",
-              minLength: { value: 2, message: "Minimum 2 characters" },
-              maxLength: { value: 30, message: "Maximum 30 characters" },
-            })}
+            {...register("name", VALIDATION.name)}
           />
         </div>
 
         <div className={styles.inputWrapper}>
           <input
             placeholder="Phone number"
-            {...register("phoneNumber", {
-              required: "Phone number is required",
-              pattern: {
-                value: /^[0-9]{10,13}$/,
-                message: "Phone must contain only digits (10–13 characters)",
-              },
-            })}
+            {...register("phoneNumber", VALIDATION.phoneNumber)}
           />
         </div>
 
         <div className={styles.inputWrapper}>
           <input
             placeholder="Email"
-            {...register("email", {
-              required: "Email is required",
-              pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Enter a valid email",
-              },
-            })}
+            {...register("email", VALIDATION.email)}
           />
           <div className={styles.errorContainer}>
             {Object.keys(errors).length > 0 && (
