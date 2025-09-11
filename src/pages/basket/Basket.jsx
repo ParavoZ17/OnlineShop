@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./basket.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import OrderForm from "../../components/orderForm/OrderForm";
-import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import SectionHeader from "../../components/sectionHeader/SectionHeader";
 
 import {
   decrementQuantity,

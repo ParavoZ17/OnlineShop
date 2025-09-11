@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./CategoryList.module.css";
-import SectionHeader from "../SectionHeader/SectionHeader";
+import SectionHeader from "../sectionHeader/SectionHeader";
 import { useNavigate } from "react-router-dom";
 
 export default function CategoryList({ categories, limit }) {

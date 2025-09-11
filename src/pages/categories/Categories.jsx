@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import styles from "./Categories.module.css";
-import CategoryList from "../../components/CategoryList/CategoryList";
+import CategoryList from "../../components/categoryList/CategoryList";
 
 function Categories() {
   const {

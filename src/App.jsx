@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import Layout from "./components/Layout/Layout";
+import Layout from "./components/layout/Layout";
 import { useDispatch } from "react-redux";
 
 import Home from "./pages/main/Main";

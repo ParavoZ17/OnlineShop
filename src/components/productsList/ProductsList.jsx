@@ -3,8 +3,9 @@ import { addToCart } from "../../redux/slice/bastetSlice";
 import { Link, useParams } from "react-router-dom";
 import styles from "./ProductsList.module.css";
 import { useNavigate } from "react-router-dom";
-import SectionHeader from "../SectionHeader/SectionHeader";
+import SectionHeader from "../sectionHeader/SectionHeader";
 import { useState } from "react";
+import ProductPrice from "../productPrice/ProductPrice";
 
 export default function ProductsList({ products, mode }) {
   const navigate = useNavigate();
@@ -160,18 +161,7 @@ export default function ProductsList({ products, mode }) {
                 <div className={styles.productInfo}>
                   <p className={styles.productTitle}>{product.title}</p>
                   <div>
-                    {product.discont_price ? (
-                      <>
-                        <span className={styles.price}>
-                          ${product.discont_price}
-                        </span>
-                        <span className={styles.discont_price}>
-                          ${product.price}
-                        </span>
-                      </>
-                    ) : (
-                      <span className={styles.price}>${product.price}</span>
-                    )}
+                    <ProductPrice price={product.price} discontPrice={product.discont_price} />
                   </div>
                 </div>
               </Link>
