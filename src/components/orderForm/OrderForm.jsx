@@ -1,6 +1,6 @@
 import styles from "./orderForm.module.css";
 import { useForm } from "react-hook-form";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
 import {VALIDATION, BASE_URL} from '../../../constants'
@@ -70,7 +70,6 @@ export default function OrderForm() {
             )}
           </div>
         </div>
-
         <input
           type="submit"
           value={isSubmitting ? "Sending..." : "Order"}
@@ -78,7 +77,6 @@ export default function OrderForm() {
           className={styles.submitBtn}
         />
       </form>
-      <ToastContainer />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import styles from "./form.module.css";
 import { useForm } from "react-hook-form";
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {VALIDATION, BASE_URL} from '../../../constants'
 
@@ -72,7 +72,7 @@ export default function Form() {
           className={styles.submitBtn}
         />
       </form>
-      <ToastContainer />
+      
     </>
   );
 }

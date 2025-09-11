@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slice/bastetSlice";
 import DescriptionModal from "../descriptionModal/DescriptionModal";
 import {BASE_URL} from '../../../constants'
+import { toast } from "react-toastify";
 
 export default function ProductDetail({ product }) {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export default function ProductDetail({ product }) {
 
   const handleAddToCart = () => {
     dispatch(addToCart({ ...product, quantity }));
+     toast.success(`${product.title} add in basket!`);
   };
 
   return (
