@@ -1,6 +1,6 @@
 import styles from "./form.module.css";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Form() {
@@ -76,11 +76,12 @@ export default function Form() {
 
         <input
           type="submit"
-          value={isSubmitting ? "Sending..." : "Get a discount"}
+          value={!isValid?'fill out the form':isSubmitting ? "Sending..." : "Get a discount"}
           disabled={!isValid || isSubmitting}
           className={styles.submitBtn}
         />
       </form>
+      <ToastContainer/>
     </>
   );
 }

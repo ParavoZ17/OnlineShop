@@ -35,3 +35,13 @@ button {
   background-color: inherit;
   cursor: pointer;
 }
+
+li{
+  transition: box-shadow 0.3s ease; 
+  border-radius: 12px;
+  padding-bottom: 5px;
+}
+
+li:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}

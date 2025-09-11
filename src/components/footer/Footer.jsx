@@ -15,8 +15,8 @@ function Footer() {
         <div className={styles.contactContainer}>
           <p className={styles.title}>Socials</p>
           <div className={styles.socialIcons}>
-            <img src={whatsapp} alt="whatsapp" />
-            <img src={instagram} alt="instagram" />
+            <a href="https://web.whatsapp.com/"><img src={whatsapp} alt="whatsapp" /></a>
+            <a href="https://www.instagram.com/"><img src={instagram} alt="instagram" /></a>
           </div>
         </div>
         <div className={styles.contactContainer}>
