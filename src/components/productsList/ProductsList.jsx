@@ -161,7 +161,10 @@ export default function ProductsList({ products, mode }) {
                 <div className={styles.productInfo}>
                   <p className={styles.productTitle}>{product.title}</p>
                   <div>
-                    <ProductPrice price={product.price} discontPrice={product.discont_price} />
+                    <ProductPrice
+                      price={product.price}
+                      discontPrice={product.discont_price}
+                    />
                   </div>
                 </div>
               </Link>

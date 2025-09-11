@@ -1,13 +1,11 @@
 .product_container {
- 
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 40px 40px 80px 40px;
   gap: 32px;
-  height: 694px; 
-  overflow: hidden; 
+  height: 694px;
+  overflow: hidden;
   img {
-   
     height: 504px;
     width: 100%;
     object-fit: contain;
@@ -119,10 +117,9 @@
 }
 
 .readme {
-    button{
-        font-size: 16px;
-        border:none;
+  button {
+    font-size: 16px;
+    border: none;
     text-decoration: underline;
-    }
-    
+  }
 }

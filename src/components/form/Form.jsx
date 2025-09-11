@@ -76,12 +76,18 @@ export default function Form() {
 
         <input
           type="submit"
-          value={!isValid?'fill out the form':isSubmitting ? "Sending..." : "Get a discount"}
+          value={
+            !isValid
+              ? "fill out the form"
+              : isSubmitting
+                ? "Sending..."
+                : "Get a discount"
+          }
           disabled={!isValid || isSubmitting}
           className={styles.submitBtn}
         />
       </form>
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 }

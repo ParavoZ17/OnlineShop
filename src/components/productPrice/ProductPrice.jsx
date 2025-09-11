@@ -1,5 +1,4 @@
-import styles from './productPrice.module.css'
-
+import styles from "./productPrice.module.css";
 
 export default function ProductPrice({ price, discontPrice }) {
   if (discontPrice) {

@@ -23,7 +23,7 @@
 }
 .basketSection {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: flex-start;
   gap: 32px;
 }
@@ -37,7 +37,7 @@
 }
 
 .productsList {
-  flex: 1; 
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -113,7 +113,7 @@
 }
 
 .orderSending {
-  flex: 0 0 548px; 
+  flex: 0 0 548px;
   max-height: 582px;
   background-color: #dddddd;
   border-radius: 12px;
