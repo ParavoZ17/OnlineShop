@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3333";
+export const BASE_URL = "https://pet-shop-backend-0psp.onrender.com";
 export const VALIDATION = {
    name: {
               required: "Name is required",
